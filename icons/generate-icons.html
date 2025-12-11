@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Generate Icons</title>
+</head>
+
+<body>
+  <canvas id="c16" width="16" height="16"></canvas>
+  <canvas id="c48" width="48" height="48"></canvas>
+  <canvas id="c128" width="128" height="128"></canvas>
+  <script>
+    function drawIcon(ctx, size) {
+      const scale = size / 24;
+
+      // Background clip (darker blue)
+      ctx.fillStyle = '#4a8bc4';
+      ctx.beginPath();
+      roundRect(ctx, 4 * scale, 6 * scale, 14 * scale, 16 * scale, 2 * scale);
+      ctx.fill();
+
+      // Front clip (lighter blue)
+      ctx.fillStyle = '#5b9bd5';
+      ctx.beginPath();
+      roundRect(ctx, 6 * scale, 2 * scale, 14 * scale, 16 * scale, 2 * scale);
+      ctx.fill();
+
+      // Lines
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 1.5 * scale;
+      ctx.lineCap = 'round';
+
+      ctx.beginPath();
+      ctx.moveTo(9 * scale, 8 * scale);
+      ctx.lineTo(17 * scale, 8 * scale);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(9 * scale, 12 * scale);
+      ctx.lineTo(14 * scale, 12 * scale);
+      ctx.stroke();
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+    }
+
+    [16, 48, 128].forEach(size => {
+      const canvas = document.getElementById('c' + size);
+      const ctx = canvas.getContext('2d');
+      drawIcon(ctx, size);
+      console.log('icon-' + size + '.png:', canvas.toDataURL('image/png'));
+    });
+  </script>
+</body>
+
+</html>

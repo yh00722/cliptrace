@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipTrace Promo Tile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .promo-tile {
+            width: 440px;
+            height: 280px;
+            background: linear-gradient(135deg, #7eb8e8 0%, #6aa9d9 50%, #5b9bd5 100%);
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background pattern */
+        .promo-tile::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+            z-index: 1;
+        }
+
+        .icon-container {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .icon-container svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            z-index: 1;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            z-index: 1;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            opacity: 0.95;
+        }
+
+        .feature span {
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="promo-tile">
+        <!-- Header: Icon + Title -->
+        <div class="header">
+            <div class="icon-container">
+                <!-- ClipTrace Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="4" y="6" width="12" height="14" rx="2"></rect>
+                    <rect x="8" y="2" width="12" height="14" rx="2" fill="rgba(255,255,255,0.3)"></rect>
+                    <path d="M12 8h4" stroke="white"></path>
+                    <path d="M12 11h3" stroke="white"></path>
+                </svg>
+            </div>
+            <span class="title">ClipTrace</span>
+        </div>
+
+        <!-- Tagline -->
+        <div class="tagline">Your Intelligent Clipboard Companion</div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 2v4"></path>
+                    <path d="m16.24 7.76-2.12 2.12"></path>
+                    <path d="M20.49 12H18"></path>
+                    <path d="m16.24 16.24-2.12-2.12"></path>
+                    <path d="M12 20.49V18"></path>
+                    <path d="m7.76 16.24 2.12-2.12"></path>
+                    <path d="M4 12h2.5"></path>
+                    <path d="m7.76 7.76 2.12 2.12"></path>
+                </svg>
+                <span>Auto-Capture</span>
+            </div>
+            <div class="feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <span>Locate & Highlight</span>
+            </div>
+            <div class="feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <span>Source Tracking</span>
+            </div>
+            <div class="feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Privacy First</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
