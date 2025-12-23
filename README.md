@@ -1,10 +1,20 @@
 # ClipTrace
 
+<div align="center">
+
+<a href="https://www.cliptrace.app/">
+  <img src="img/card.png" alt="ClipTrace - Your Intelligent Clipboard Companion" width="500">
+</a>
+
+</div>
+
 A cross-browser extension that intelligently manages your copy operations while browsing. Automatically saves copied content with source information, supports history management and smart jump-to-highlight.
 
 ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-green?logo=google-chrome)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+
+🚀 **Available on Chrome Web Store**: [Install ClipTrace](https://chromewebstore.google.com/detail/plonkjehdjblfikddflacnohfgcgnpmb?utm_source=item-share-cb)
 
 ## ✨ Features
 
@@ -25,7 +35,7 @@ A cross-browser extension that intelligently manages your copy operations while 
 2. Open the browser and go to `chrome://extensions/` (Chrome) or `edge://extensions/` (Edge)
 3. Enable **"Developer mode"** in the upper right corner
 4. Click **"Load unpacked"**
-5. Select the `smart-clipboard` folder
+5. Select the `cliptrace` folder
 6. Done! Click the toolbar icon to use
 
 ## 📖 Usage
@@ -45,25 +55,6 @@ Click the ⚙️ button in the upper right corner of the sidebar to open setting
 - **Website Blacklist**: Add website domains you don't want to record
 - **Data Export/Import**: Backup or restore history
 
-## 📁 Project Structure
-
-```
-smart-clipboard/
-├── manifest.json          # Extension manifest
-├── background/            # Background service
-│   └── service-worker.js
-├── content/               # Content script
-│   └── content-script.js
-├── sidebar/               # Sidebar UI
-│   ├── sidebar.html
-│   ├── sidebar.css
-│   └── sidebar.js
-├── utils/                 # Utility functions
-│   ├── storage.js
-│   └── common.js
-└── icons/                 # Icon assets
-```
-
 ## 🔐 Privacy
 
 - All data is stored locally in the browser only
@@ -75,7 +66,7 @@ smart-clipboard/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/smart-clipboard.git
+git clone https://github.com/yh00722/cliptrace.git
 
 # Load the development version in Chrome
 1. Open chrome://extensions/
@@ -93,8 +84,4 @@ git clone https://github.com/your-username/smart-clipboard.git
 
 ## 📄 License
 
-MIT License - See [LICENSE](LICENSE) file
-
----
-
-**ClipTrace** - Make copying smarter 📋✨
+MIT License
